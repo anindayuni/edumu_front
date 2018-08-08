@@ -25,35 +25,27 @@
               <thead>
                 <tr>
                   <th width="10px">No</th>
-                  <th>Logo</th>
-                  <th>Administrator</th>
-                  <th>Telp.</th>
+                  <th>Nama</th>
                   <th>Email</th>
-                  <th width="80px;">Status</th>
-                  <th>Aksi</th>
+                  <th>User Login</th>
+                  <th width="20%">Aksi</th>
                 </tr>
               </thead>
 
               <tbody>
-                  <tr>
-                    <td></td>
-                    <td class="text-center"><img src="" style="width: 50px;"></td>
-                    <td>
-                      <!-- <?= substr(strip_tags($value['blog_title']), 0,80) ?><br/>
-                      <span style="color: red;">-- <?= $value['category_name']; ?></span> -->
-                    </td>
-                    <td>
-                      <!-- <?php if($value['blog_status']=='publish') echo "<span class='btn btn-success btn-xs'>publish</span>"; 
-                      elseif($value['blog_status']=='draf') echo "<span class='btn btn-warning btn-xs'>draf</span>"; ?> -->
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td align="right">
-                      <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
-                      <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
-                      <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".delblog-0"><i class="fa fa-trash-o"></i></button>
-                    </td>
+                  <?php foreach ($admin as $key => $value): ?>
+                    <tr>
+                      <td><?= $key+1; ?></td>
+                      <td class="text-center"><img src="" style="width: 50px;"></td>
+                      <td><?= $value['user_email']; ?></td>
+                      <td><?= $value['user_login']; ?></td>
+                      <td align="right">
+                        <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-eye"></i></a>
+                        <a href="#" type="button" class="btn btn-default btn-xs"><i class="fa fa-pencil-square-o"></i></a>
+                        <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target=".delblog-0"><i class="fa fa-trash-o"></i></button>
+                      </td>
                   </tr>
+                  <?php endforeach ?>
                   <!-- modal start -->
                   <div class="modal fade delblog-0" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">

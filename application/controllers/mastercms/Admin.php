@@ -5,10 +5,12 @@ class Admin extends MY_Controller
 	function __construct()
 	{
 		parent::__construct();
+		$this->load->model('Madmin');
 	}
 	function index()
 	{
-		$this->render_backend('backend/admin/showadmin');
+		$data['admin'] = $this->Madmin->showadmin();
+		$this->render_backend('backend/admin/showadmin',$data);
 	}
 }
 ?>
