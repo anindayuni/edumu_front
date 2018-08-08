@@ -4,3 +4,15 @@
 .breadcrumb {
 	padding: 0px;
 }
+.logo{
+	background-image: url('../../img/logo-edumu.png');
+	background-size: 180px;
+	background-repeat: no-repeat !important;
+	height: 100px;
+	margin: 10px 5px;
+}
+.logo img{
+	/*background-image: url('../../img/logo-edumu.png');*/
+	width: 200px;
+}
+

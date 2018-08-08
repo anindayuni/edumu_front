@@ -4,7 +4,8 @@ $hal = $this->uri->segment('2');
 <div class="col-md-3 left_col">
   <div class="left_col scroll-view">
     <div class="navbar nav_title" style="border: 0;">
-      <a href="<?= base_url('mastercms'); ?>" class="site_title"><i class="glyphicon glyphicon-education"></i> <span>Edumu CMS</span></a>
+      <div class="logo"></div>
+      <!-- <a href="<?= base_url('mastercms'); ?>" class="site_title"><i class="glyphicon glyphicon-education"></i> <span>Edumu CMS</span></a> -->
     </div>
 
     <div class="clearfix"></div>
