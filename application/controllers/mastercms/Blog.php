@@ -150,6 +150,65 @@ class Blog extends MY_Controller
 			}
 		// }
 	}
+	function addCat()
+	{
+		$data = array(
+			'category_name' => $this->input->get('category_name'),
+			'category_status' => $this->input->get('category_status'),
+		);
+		$this->db->insert('_category',$data);
+	}
+	function loadData()
+	{
+		$data = $this->db->get('_category')->result();
+
+		echo " <table class='table table-bordered'>
+              <thead>
+                <tr>
+                  <th width='15px'>No</th>
+                  <th>Kategori Blog</th>
+                  <th>Status</th>
+                  <th width='15%' align='right'>Aksi</th>
+                </tr>
+              </thead>
+              <tbody>";
+$no=1;
+		foreach ($data as $value) {
+			# code...
+		
+      echo "
+		<tr>
+        <td scope='row'>$no</td>
+        <td scope='row'>$value->category_name</td>
+        <td>$value->category_status</td>
+        <td align='right'>
+          <button type='button' class='btn btn-default btn-xs' data-toggle='modal' data-target='#editCat-$value->category_id'><i class='fa fa-pencil-square-o'></i></button>
+          <button type='button' class='btn btn-default btn-xs' data-toggle='modal' data-target='#delCat-$value->category_id'><i class='fa fa-trash-o'></i></button>
+        </td>
+      </tr>
+      ";
+      $no++;
+
+      }
+
+      echo "         </tbody>
+           </table>";
+ 
+	}
+
+
+	function updateCat()
+	{
+		$data = array(
+			'category_name' => $this->input->get('category_name'),
+			'category_status' => $this->input->get('category_status'),
+			
+		);
+
+		$this->db->where('category_id', $this->input->get('category_id'));
+		$this->db->update('_categoryu',$data);
+
+	}
 }
 ?>
 			<!-- echo "<pre>";

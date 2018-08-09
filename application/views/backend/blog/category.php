@@ -21,25 +21,11 @@
             <div class="clearfix"></div>
           </div>
           <div class="x_content">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th width="15px">No</th>
-                  <th>Kategori Blog</th>
-                  <th width="15%" align="right">Aksi</th>
-                </tr>
-              </thead>
-              <tbody>
+
+               <div id="list"></div>
+
                 <?php $data = json_decode($category, true); ?>
                 <?php foreach ($data as $key => $value): ?>
-                  <tr>
-                    <th scope="row"><?= $key+1; ?></th>
-                    <td><?= $value['category_name']; ?></td>
-                    <td align="right">
-                      <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#editCat-<?= $value['category_id']; ?>"><i class="fa fa-pencil-square-o"></i></button>
-                      <button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#delCat-<?= $value['category_id']; ?>"><i class="fa fa-trash-o"></i></button>
-                    </td>
-                  </tr>
                   <!-- modal edit -->
                   <div class="modal fade bs-example-modal-sm" id="editCat-<?= $value['category_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog modal-sm">
@@ -52,22 +38,45 @@
                             <h4 class="modal-title" id="myModalLabel2"><i class="fa fa-pencil"></i>&nbsp; Edit Kategori</h4>
                           </div>
                           <div class="modal-body">
-                            <input type="text" id="fullname" class="form-control" name="category_name" placeholder="Kategori" value="<?= $value['category_name']; ?>" required />
+                            <input type="text" id="category_id_update" value="<?= $value['category_id']; ?>" required />
+                            <input type="text" class="form-control" id="category_name_update" placeholder="Kategori" value="<?= $value['category_name']; ?>" required />
                             <br/>
                             <div class="form-group">
-                              <input type="radio" class="flat" name="category_status" value="<?= $value['category_status'] ?>" <?php if($value['category_status']=='1') echo "checked"; ?> required />&nbsp; Aktif &nbsp;&nbsp;
-                              <input type="radio" class="flat" name="category_status" <?php if($value['category_status']=='0') echo "checked"; ?> value="<?= $value['category_status'] ?>" />&nbsp; Non Aktif
+                              <input type="radio" class="flat" id="category_status_update<?= $value['category_id'] ?>" name="<?= $value['category_id'] ?>" value="1" <?php if($value['category_status']=='1') echo "checked"; ?> required />&nbsp; Aktif &nbsp;&nbsp;
+                              <input type="radio" name="<?= $value['category_id'] ?>" class="flat" id="category_status_update<?= $value['category_id'] ?>" <?php if($value['category_status']=='0') echo "checked"; ?> value="0" />&nbsp; Non Aktif
                             </div>
                             <br/>
                           </div>
                           <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp; Batal</button>
-                            <button name="category_id" value="<?= $value['category_id']; ?>" type="submit" class="btn btn-success"><i class="fa fa-check"></i>&nbsp; Simpan</button>
+                            <button name="category_id" value="" type="button" onClick="updateData<?= $value['category_id'] ?>()" class="btn btn-success"><i class="fa fa-check"></i>&nbsp; Simpan</button>
                           </div>
                         </form>
                       </div>
                     </div>
                   </div>
+
+<script type="text/javascript">
+  
+      function updateData<?= $value['category_id'] ?>()
+    {
+        var category_name = $("#category_name_update").val();
+        var category_status = $("#category_status_update<?= $value['category_id'] ?>").val(); 
+        var category_id = $("#category_id_update").val();
+
+            $.ajax({
+            url:"<?php echo base_url() ?>mastercms/blog/updateCat",
+            data:"category_name="+category_name+"&category_status="+category_status+"&category_id="+category_id,
+            success: function (html) {
+           // $("#list").html(html);
+           // alert('sukses');
+           load();
+       }
+   })
+    }
+
+</script>
+
                   <!-- modal delete -->
                   <div class="modal fade" id="delCat-<?= $value['category_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog">
@@ -89,8 +98,6 @@
                     </div>
                   </div>
                 <?php endforeach ?>
-              </tbody>
-            </table>
           </div>
         </div>
       </div>
@@ -105,13 +112,13 @@
             <form class="form-horizontal form-label-left">
               <div class="form-group">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="text" class="form-control" placeholder="Nama Kategori" >
+                  <input type="text" id="category_name" class="form-control" placeholder="Nama Kategori" >
                 </div>
               </div>
               <div class="form-group">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                  <input type="radio" class="flat" name="gender" checked="" value="1" required /> Aktif &nbsp;&nbsp;
-                  <input type="radio" class="flat" name="gender" value="0" /> Non Aktif 
+                  <input type="radio" class="flat" id="category_status" checked="" value="1" required /> Aktif &nbsp;&nbsp;
+                  <input type="radio" class="flat" id="category_status" value="0" /> Non Aktif 
                 </div>
               </div>
 
@@ -119,7 +126,7 @@
               <div class="form-group">
                 <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
                   <button type="reset" class="btn btn-primary">Reset</button>
-                  <button type="submit" class="btn btn-success">Submit</button>
+                  <button type="button" onclick="add()" class="btn btn-success">Submit</button>
                 </div>
               </div>
 
@@ -132,3 +139,35 @@
     </div>            
   </div>
 </div>
+<script type="text/javascript">
+
+
+    function add() {
+        var category_name = $("#category_name").val();
+        var category_status = $("#category_status").val();
+
+        $.ajax({
+            url:"<?php echo base_url() ?>mastercms/blog/addCat",
+            data:"category_name="+category_name+"&category_status="+category_status,
+            success: function (html) {
+           // $("#list").html(html);
+           // alert('sukses');
+           load();
+       }
+   })
+      }
+
+      function load () {
+        $.ajax({
+            url:"<?php echo base_url() ?>mastercms/blog/loadData",
+        success: function (html) {
+         $("#list").html(html);
+     }
+ })
+       
+    }
+
+
+  
+</script>
+<body onload="load()">

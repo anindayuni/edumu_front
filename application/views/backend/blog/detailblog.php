@@ -24,7 +24,7 @@
             <div class="">
               <h3><?= $detail['blog_title'] ?></h3>
               <?php if (!empty($detail['blog_image'])): ?>
-                <img src="<?= base_url('/assets/img/article/').$detail['blog_image']; ?>" style="width: 70%;" class="text-center">
+                <img src="<?= base_url('/assets/img/article/').$detail['blog_image']; ?>" style="width: 80%;">
               <?php endif ?>
               <br />
               <br />

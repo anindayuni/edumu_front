@@ -60,7 +60,7 @@
                             <li><a class="nav-link <?php if($pages=='fitur')echo "active"; ?>" href="<?= base_url('pages/fitur'); ?>">Feature</a></li>
                             <li><a class="nav-link <?php if($page=='blog')echo "active"; ?>" href="<?= base_url('blog'); ?>">Blog</a></li>
                             <li><a class="nav-link " href="#contact">Kontak kami</a></li>
-                            <li><a class="appao-btn" href="<?= base_url('pages/demo'); ?>">Ajukan Demo</a></li>
+                            <!-- <li><a class="appao-btn" href="<?= base_url('pages/demo'); ?>">Ajukan Demo</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -71,58 +71,170 @@
 
     <?= $content; ?>
 
+
+    <!-- <section class="blog-area ptb-90" id="blog" style="padding:80px 0"></section> -->
     <!-- footer start -->
     <footer class="footer" id="contact">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="contact-address" style="height: 480px !important;">
-                        <h4>Alamat</h4>
-                        <p>Jl. Menteng Raya No.62, RT.3/RW.9, Kb. Sirih, Menteng, Jakarta Pusat 10340</p>
-                        <ul>
-                            <li>
-                                <div class="contact-address-icon">
-                                    <i class="icofont icofont-headphone-alt"></i>
+            <div class="col-md-8 offset-md-2">
+                <div class="row">
+                    <div class="contact-address">
+                        <div class="col-md-6">
+                            <h3>Get in Touch</h3><br/>
+                            <div class="left-content">
+                                <p>Jl. Menteng Raya No.62, RT.3/RW.9,Kb. Sirih, Menteng, Jakarta Pusat 10340</p>
+                                <ul>
+                                    <li>
+                                        <div class="contact-address-icon">
+                                            <i class="icofont icofont-headphone-alt"></i>
+                                        </div>
+                                        <div class="contact-address-info">
+                                            <a href="callto:#">021 3006 0410</a>
+                                            <a href="callto:#">085 6751 1669 (jakarta) <br/> 0857 4370 0020 (jogja)</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-address-icon">
+                                            <i class="icofont icofont-envelope"></i>
+                                        </div>
+                                        <div class="contact-address-info">
+                                            <a href="mailto:#">edumu.majelis.dikdasmen@gmail.com</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="contact-address-icon">
+                                            <i class="icofont icofont-web"></i>
+                                        </div>
+                                        <div class="contact-address-info">
+                                            <a href="index.html">www.edumu.co.id</a>
+                                        </div>
+                                    </li>
+                                </ul>   
+                                <!-- <p>Jl. Menteng Raya No.62, RT.3/RW.9,Kb. Sirih, Menteng, Jakarta Pusat 10340</p>
+                                <div class="contact-info">
+                                    <div class="contact-address-icon mycontact">
+                                        <i class="icofont icofont-headphone-alt"></i>
+                                    </div>
+                                    <div class="contact-address-info mycontact">
+                                        <a href="callto:#">021 3006 0410</a><br/>
+                                        <a href="callto:#">085 6751 1669 (jakarta) <br/> 0857 4370 0020 (jogja)</a>
+                                    </div>
                                 </div>
-                                <div class="contact-address-info">
-                                    <a href="callto:#">021 3006 0410</a>
-                                    <a href="callto:#">085 6751 1669 (jakarta) / 0857 4370 0020 (jogja)</a>
+                                <div class="contact-info">
+                                    <div class="contact-address-icon mycontact">
+                                        <i class="icofont icofont-envelope"></i>
+                                    </div>
+                                    <div class="contact-address-info mycontact">
+                                        <a href="mailto:#">edumu.majelis.dikdasmen@gmail.com</a>
+                                    </div>
                                 </div>
-                            </li>
-                            <li>
-                                <div class="contact-address-icon">
-                                    <i class="icofont icofont-envelope"></i>
-                                </div>
-                                <div class="contact-address-info">
-                                    <a href="mailto:#">edumu.majelis.dikdasmen@gmail.com</a>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="contact-address-icon">
-                                    <i class="icofont icofont-web"></i>
-                                </div>
-                                <div class="contact-address-info">
-                                    <a href="index.html">www.edumu.co.id</a>
-                                </div>
-                            </li>
-                        </ul>
+                                <div class="contact-info">
+                                    <div class="contact-address-icon mycontact">
+                                        <i class="icofont icofont-web"></i>
+                                    </div>
+                                    <div class="contact-address-info mycontact">
+                                        <a href="index.html">www.edumu.co.id</a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <form id="contact-form" action="#" method="POST">
+                                <input type="text" name="name" placeholder="Enter Your Name">
+                                <input type="email" name="email" placeholder="Enter Your Email">
+                                <input type="text" name="subject" placeholder="Your Subject">
+                                <textarea placeholder="Messege" name="message"></textarea>
+                                <button type="submit" name="submit">Send Message</button>
+                            </form>    
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="contact-form" style="height: 480px !important;">
-                        <h4>Kontak kami</h4>
-                        <p class="form-message"></p>
-                        <form id="contact-form" action="#" method="POST">
-                            <input type="text" name="name" placeholder="Enter Your Name">
-                            <input type="email" name="email" placeholder="Enter Your Email">
-                            <input type="text" name="subject" placeholder="Your Subject">
-                            <textarea placeholder="Messege" name="message"></textarea>
-                            <button type="submit" name="submit">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-                
             </div>
+
+
+                <!-- <div class="col-lg-8 offset-md-2">
+                    <div class="contact-address">
+                        <div class="col-lg-4">
+                            <div class="left-content">
+                                <h4>Alamat</h4>
+                            <p>Jl. Menteng Raya No.62, RT.3/RW.9, Kb. Sirih, Menteng, Jakarta Pusat 10340</p>
+                            <ul>
+                                <li>
+                                    <div class="contact-address-icon">
+                                        <i class="icofont icofont-headphone-alt"></i>
+                                    </div>
+                                    <div class="contact-address-info">
+                                        <a href="callto:#">021 3006 0410</a>
+                                        <a href="callto:#">085 6751 1669 (jakarta) / 0857 4370 0020 (jogja)</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-address-icon">
+                                        <i class="icofont icofont-envelope"></i>
+                                    </div>
+                                    <div class="contact-address-info">
+                                        <a href="mailto:#">edumu.majelis.dikdasmen@gmail.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-address-icon">
+                                        <i class="icofont icofont-web"></i>
+                                    </div>
+                                    <div class="contact-address-info">
+                                        <a href="index.html">www.edumu.co.id</a>
+                                    </div>
+                                </li>
+                            </ul>   
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <h4>Kontak kami</h4>
+                            <form id="contact-form" action="#" method="POST">
+                                <input type="text" name="name" placeholder="Enter Your Name">
+                                <input type="email" name="email" placeholder="Enter Your Email">
+                                <input type="text" name="subject" placeholder="Your Subject">
+                                <textarea placeholder="Messege" name="message"></textarea>
+                                <button type="submit" name="submit">Send Message</button>
+                            </form>    
+                        </div>
+                    </div>
+
+                </div> -->
+                <!-- <div class="col-lg-6">
+                    <div class="contact-form" style="height: 480px !important;">
+                        <h4>Alamat</h4>
+                            <p>Jl. Menteng Raya No.62, RT.3/RW.9, Kb. Sirih, Menteng, Jakarta Pusat 10340</p>
+                            <ul>
+                                <li>
+                                    <div class="contact-address-icon">
+                                        <i class="icofont icofont-headphone-alt"></i>
+                                    </div>
+                                    <div class="contact-address-info">
+                                        <a href="callto:#">021 3006 0410</a>
+                                        <a href="callto:#">085 6751 1669 (jakarta) / 0857 4370 0020 (jogja)</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-address-icon">
+                                        <i class="icofont icofont-envelope"></i>
+                                    </div>
+                                    <div class="contact-address-info">
+                                        <a href="mailto:#">edumu.majelis.dikdasmen@gmail.com</a>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="contact-address-icon">
+                                        <i class="icofont icofont-web"></i>
+                                    </div>
+                                    <div class="contact-address-info">
+                                        <a href="index.html">www.edumu.co.id</a>
+                                    </div>
+                                </li>
+                            </ul>   
+                    </div>
+                </div> -->
+                
+                <!-- </div> -->
         <!-- <div class="row">
             <div class="col-lg-12">
                 <div class="subscribe-form">
@@ -136,14 +248,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="copyright-area">
-                    <!-- <ul>
+                    <ul>
                         <li><a href="#"><i class="icofont icofont-social-facebook"></i></a></li>
                         <li><a href="#"><i class="icofont icofont-social-twitter"></i></a></li>
                         <li><a href="#"><i class="icofont icofont-brand-linkedin"></i></a></li>
                         <li><a href="#"><i class="icofont icofont-social-pinterest"></i></a></li>
                         <li><a href="#"><i class="icofont icofont-social-google-plus"></i></a></li>
-                    </ul> -->
-                    <p>&copy; 2017 <a href="index.html">PT. HILOTECH KARYA ANAK INDONESIA</a></p>
+                    </ul>
+                    <p>&copy; 2017 <a href="<?= base_url(); ?>">PT. HILOTECH KARYA ANAK INDONESIA</a></p>
                 </div>
             </div>
         </div>

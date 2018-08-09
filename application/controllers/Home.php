@@ -13,15 +13,11 @@ class Home extends MY_Controller
 	}
 	function fitur()
 	{
-		$this->render_page('frontend/fitur');
+		$this->render_page('frontend/pages/fitur');
 	}
 	function tentang_kami()
 	{
-		$this->render_page('frontend/tentang-kami');
-	}
-	function demo()
-	{
-		$this->render_page('frontend/demo');
+		$this->render_page('frontend/pages/tentang-kami');
 	}
 }
 

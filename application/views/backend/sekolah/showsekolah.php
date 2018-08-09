@@ -42,10 +42,7 @@
                       <!-- <?= substr(strip_tags($value['blog_title']), 0,80) ?><br/>
                       <span style="color: red;">-- <?= $value['category_name']; ?></span> -->
                     </td>
-                    <td>
-                      <!-- <?php if($value['blog_status']=='publish') echo "<span class='btn btn-success btn-xs'>publish</span>"; 
-                      elseif($value['blog_status']=='draf') echo "<span class='btn btn-warning btn-xs'>draf</span>"; ?> -->
-                    </td>
+                    <td> </td>
                     <td></td>
                     <td></td>
                     <td align="right">
@@ -83,3 +80,69 @@
     </div>            
   </div>
 </div>
+
+<!-- modal addsekolah -->
+<div class="modal fade" id="addsekolah" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel2"><i class="glyphicon glyphicon-plus"></i>&nbsp; Tambah Sekolah</h4>
+      </div>
+      <div class="modal-body">
+        <form name="tambah" class="form" method="post" enctype="multipart/form-data">
+          <div class="form-group col-md-12">
+            <label>Nama Sekolah * </label>
+            <input type="text" class="form-control" minlength="10" id="sekolah_nama" placeholder="" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label>Email * </label>
+            <input type="email" class="form-control" minlength="10" id="sekolah_email" placeholder="" required />
+          </div>
+          <div class="form-group col-md-6">
+            <label>Telp. * </label>
+            <input type="number" class="form-control col-md-6" minlength="10" id="sekolah_telp" placeholder="" required />
+          </div>
+          <div class="form-group col-md-12">
+            <label>Alamat * </label>
+            <input type="text" class="form-control" minlength="10" id="sekolah_alamat" placeholder="" required />
+          </div>
+          <div class="form-group col-md-12">
+            <label>Gambar Sekolah * </label>
+            <input type="file" class="form-control" id="sekolah_image" required />
+          </div>
+          <div class="pull-right">
+            <button type="button" class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i>&nbsp; Batal</button>
+            <button class="btn btn-success" onclick="add()" type="button"><i class="fa fa-check"></i>&nbsp; Simpan</button>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer"> </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  
+    function add() {
+        var sekolah_nama = $("#sekolah_nama").val();
+        var sekolah_email = $("#sekolah_email").val();
+        var sekolah_telp = $("#sekolah_telp").val();
+        var sekolah_alamat = $("#sekolah_alamat").val();
+        var sekolah_image = $("#sekolah_image").val();
+      
+        $.ajax({
+            url:"<?php echo base_url() ?>mastercms/sekolah/addsekolah",
+            data:"sekolah_nama="+sekolah_nama+"&sekolah_email="+sekolah_email+"&sekolah_telp="+sekolah_telp+"&sekolah_alamat="+sekolah_alamat+"&sekolah_image="+sekolah_image,
+            success: function (html) {
+           alert('sukses');
+          
+       }
+   })
+
+
+}
+
+
+</script>

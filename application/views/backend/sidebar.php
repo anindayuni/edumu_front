@@ -26,7 +26,8 @@ $hal = $this->uri->segment('2');
           <li <?php if($hal == 'users') echo "active"; ?>><a><i class="fa fa-users"></i>  Pengguna <span class="fa fa-chevron-down"></span></a>
             <ul class="nav child_menu">
               <li><a href="<?= base_url('mastercms/sekolah') ?>">Daftar Sekolah</a></li>
-              <li><a href="#">Tambah Sekolah</a></li>
+              <li><a href="#addsekolah" data-toggle="modal">Tambah Sekolah</a></li>
+              <!-- <li><a href="#addsekolah" data-toggle="modal"> Tambah Sekolah</a>      </li> -->
             </ul>
           </li>
           <li><a href="<?= base_url('mastercms/admin') ?>"><i class="fa fa-user"></i> Administrator</a></li>

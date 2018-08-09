@@ -1,40 +1,37 @@
-    <!-- hero area start -->
-    <section class="hero-area" id="home">
-        <!-- <div class="player" data-property="{videoURL:'http://youtu.be/kn-1D5z3-Cs',containment:'#home',autoPlay:true, mute:true, startAt:0, showControls:false, loop:true, opacity:1}"></div> -->
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7">
-                    <div class="hero-area-content">
-                        <h1>WELCOME TO EDUMU</h1>
-                        <p>Interactive Education Assistant : Start Learning Today!</p>
-                        <!-- <h3>GREAT FUTURE IS JUST ONE <br/>CLICK AWAY</h3> -->
-<!--                         <a href="#" class="appao-btn"><img src="assets/img/btn/playstore.png"></a>
-    <a href="#" class="appao-btn">App Store</a> -->
-    <a href="#"><img src="assets/img/btn/playstore.png" style="max-width: 90%"></a>
-    <a href="#"><img src="assets/img/btn/appstore.png" style="max-width: 90%"></a>
-</div>
-</div>
-<div class="col-lg-5">
-    <div class="hand-mockup text-lg-left text-center">
-        <img src="assets/img/.png" alt="Hand Mockup" />
-    </div>
-</div>
-</div>
-</div>
-</section><!-- hero area end -->
-<!-- about section start -->
-<section class="about-area ptb-90">
+<!-- hero area start -->
+<section class="hero-area" id="home">
+    <!-- <div class="player" data-property="{videoURL:'http://youtu.be/kn-1D5z3-Cs',containment:'#home',autoPlay:true, mute:true, startAt:0, showControls:false, loop:true, opacity:1}"></div> -->
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="sec-title">
-                    <h2>Tentang Kami</h2>
-                    <span class="separator"><img src="assets/img/separator.png" alt="separator"></span>
+            <div class="col-lg-6">
+                <div class="hero-area-content">
+                    <h1>WELCOME TO EDUMU</h1>
+                    <p>Interactive Education Assistant : Start Learning Today!</p>
+                    <h3>GREAT FUTURE IS JUST ONE <br/>CLICK AWAY</h3><br/>
+                    <a href="#"><img src="assets/img/btn/playstore.png" style="max-width: 90%"></a>
+                    <a href="#"><img src="assets/img/btn/appstore.png" style="max-width: 90%"></a>
                 </div>
-
-                <!-- <div class="single-about-box"> -->
-                    <p>Kami sangat antusias untuk dapat bertemu dengan anda. Apapun masalah yang anda hadapi di sekolah, tim proHilotech adalah sebuah perusahaan pengembangan aplikasi digital yang mengkombinasikan desain dan kreatifitas teknologi. Kami membuat produk digital yang menjawab permasalahan klien secara inovatif melalui berbagai teknologi terkini seperti Augmented Reality dan Virtual Reality, hingga teknologi yang sudah populer digunakan seperti <br><br><a class="appao-btn" style="border:1px solid #666666;color: #666666;" href="pages/tentang-kami.html">Read More </a></p>
-                    <!-- </div> -->
+            </div>
+            <div class="col-lg-6">
+                <div class="hand-mockup text-lg-left text-center">
+                    <video class="embed-responsive embed-responsive-16by9" poster="<?= base_url('assets/img/edumu.png'); ?>" controls>
+                        <source src="<?php echo base_url('assets/video/edumuteaser.webm'); ?>" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- hero area end -->
+    <!-- about section start -->
+    <section class="about-area ptb-90">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="sec-title">
+                        <h2>Tentang Kami</h2>
+                        <span class="separator"><img src="assets/img/separator.png" alt="separator"></span>
+                    </div>
+                    <p>Kami sangat antusias untuk dapat bertemu dengan anda. Apapun masalah yang anda hadapi di sekolah, tim proHilotech adalah sebuah perusahaan pengembangan aplikasi digital yang mengkombinasikan desain dan kreatifitas teknologi. Kami membuat produk digital yang menjawab permasalahan klien secara inovatif melalui berbagai teknologi terkini seperti Augmented Reality dan Virtual Reality, hingga teknologi yang sudah populer digunakan seperti <br><br><a class="appao-btn" style="border:1px solid #666666;color: #666666;" href="<?= base_url('pages/tentang-kami'); ?>">Read More </a></p>
                 </div>
             </div>
         </div>
@@ -239,25 +236,43 @@
                 </div>
             </div>
         </section>
-        <!-- sutable area start -->
-        <section class="suitable-area suitable-area-bg">
+        <!-- <section class="download-area ptb-90">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-7 col-sm-12">
-                        <div class="left-content">
-                            <h3>
-                                <span>YOUR NEXT STEP TO</span>
-                                EDUMU
-                                <p>GREAT FUTURE IS JUST ONE CLICK AWAY</p>
-                                <a href="#" class="boxed-btn blank">Download</a>
-                            </div>
+                    <div class="col-lg-12">
+                        <div class="sec-title">
+                            <h2>App Screenshot</h2>
+                            <span class="separator"><img src="assets/img/separator.png" alt="separator"></span>>
                         </div>
                     </div>
                 </div>
-                <div class="right-img">
-                    <img src="assets/img/download-app2.png" alt="suitable right image">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul>
+                            <li>
+                                <a href="#" class="download-btn flexbox-center">
+                                    <div class="download-btn-icon">
+                                        <i class="icofont icofont-brand-android-robot"></i>
+                                    </div>
+                                    <div class="download-btn-text">
+                                        <p>Available on</p>
+                                        <h4>Android Store</h4>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="download-btn flexbox-center">
+                                    <div class="download-btn-icon">
+                                        <i class="icofont icofont-brand-apple"></i>
+                                    </div>
+                                    <div class="download-btn-text">
+                                        <p>Available on</p>
+                                        <h4>Apple Store</h4>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-            </section>
-            <!-- sutable area end -->
-            <section class="blog-area ptb-90" id="blog" style="padding:80px 0">
-            </section>
+            </div>
+        </section> -->

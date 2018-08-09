@@ -21,9 +21,9 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-post">
                         <div class="post-thumbnail">
-                            <a href="<?= base_url('blog/detail/'.$value['blog_alias']).'/'.$value['blog_id']; ?>"><img style="width: 340px;height: 226px;" src="<?= base_url('assets/img/article/').$value['blog_image']; ?>" alt="blog"></a>
+                            <a href="<?= base_url('blog/detail/'.$value['blog_alias']).'/'.$value['blog_id']; ?>"><img style="width: 100%;" src="<?= base_url('assets/img/article/').$value['blog_image']; ?>" alt="blog"></a>
                         </div>
-                        <div class="post-details" style="height: 300px !important;">
+                        <div class="post-details" style="height: 320px !important;">
                             <div class="post-author">
                                 <a href="#"><i class="icofont icofont-user"></i>Admin</a>
                                 <a href="#"><i class="icofont icofont-calendar"></i><?= date('d M Y', strtotime($value['publish_date'])) ?></a>
